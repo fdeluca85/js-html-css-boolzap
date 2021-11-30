@@ -1,11 +1,14 @@
 /* ==========
-    common
+     common
    ========== */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+ul {
+  list-style: none;
 }
 body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
@@ -18,9 +21,9 @@ body {
   padding: 20px 0;
 }
 
-/* ==========
+/* ===========
     container
-   ========== */
+   =========== */
 .container {
   width: 70%;
   height: 100%;
@@ -41,4 +44,19 @@ body {
   width: 65%;
   height: 100%;
   background-color: #dcd4ce;
+}
+
+.elenco-contatti {
+  display: flex;
+  flex-direction: row;
+}
+.elenco-contatti li {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px 10px 10px 20px;
+  border-bottom: 1px solid black;
+}
+.avatar {
+  width: 50px;
+  border-radius: 50%;
 }

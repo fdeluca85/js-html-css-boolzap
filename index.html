@@ -14,7 +14,19 @@
     <div id="root">
         <div class="container">
             <!-- colonna contatti -->
-            <div class="container_contact"></div>
+            <div class="container_contact">
+
+                <!-- elenco contatti -->
+                <div class="elenco-contatti">
+                    <ul>
+                        <li v-for="(contatto, index) in contacts">
+                            <img class="avatar" src="./img/avatar_1.jpg" alt="">
+                            <span>{{contatto.name}}</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- / elenco contatti -->
+            </div>
             <!-- /colonna contatti -->
 
             <!-- colonna chat -->
