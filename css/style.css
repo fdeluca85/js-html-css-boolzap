@@ -20,7 +20,10 @@ body {
   background-repeat: no-repeat;
   padding: 20px 0;
 }
-
+.active{
+  background-color: #b1b1b1;
+  color: white;
+}
 /* ===========
     container
    =========== */
@@ -29,7 +32,6 @@ body {
   height: 100%;
   background-color: #eaeaea;
   /* border: 1px solid rgb(170, 33, 33); */
-  padding: 10px;
   margin: 0 auto;
   display: flex;
 }
@@ -40,7 +42,7 @@ body {
 /* ===========
     colonna sx
    =========== */
-.container_contact {
+.colonna_sx {
   position: relative;
   width: 35%;
   height: 100%;
@@ -50,16 +52,12 @@ body {
 }
 .box-user {
   background-color: #fafafa;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   color: #b1b1b1;
   font-size: 1.2rem;
 }
 .box-user span {
   padding: 10px;
   display: flex;
-  align-items: center;
 }
 .col-user-user i {
   margin: 0 7px;
@@ -70,8 +68,7 @@ body {
   background-color: #8edafc;
   height: 100px;
   flex-shrink: 50%;
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
 }
 .box-notifiche i {
   background-color: #fafafa;
@@ -115,13 +112,23 @@ body {
 /* ===========
     colonna dx
    =========== */
-.container_chat {
+.colonna_dx {
   width: 65%;
   height: 100%;
   background-color: #dcd4ce;
 }
-
-.active{
-  background-color: #b1b1b1;
-  color: white;
+.barra-contatto{
+  background-color:#b1b1b1;
+  display: flex; 
+  padding: 10px;
+}
+.container_chat{
+  display: flex;
+}
+.msg_sent{
+  background-color: rgb(225, 243, 188);
+  padding: 10px;
+  margin: 15px;
+  width: fit-content;
+  border-radius: 15px;
 }

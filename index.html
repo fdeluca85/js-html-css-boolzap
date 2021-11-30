@@ -14,7 +14,7 @@
     <div id="root">
         <div class="container">
             <!-- colonna contatti -->
-            <div class="container_contact">
+            <div class="colonna_sx">
                 <div class="box-user">
                     <div>
                         <!-- foto e nome utente -->
@@ -67,8 +67,16 @@
             <!-- /colonna contatti -->
 
             <!-- colonna chat -->
-            <p><img class="avatar" :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'" alt="">{{contacts[activeContact].name}} </p>
-            <p>{{contacts[activeContact].messages[0].message}}</p>
+            <div class="colonna_dx">
+                <div class="barra-contatto">
+                    <img class="avatar" :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'" alt="">
+                    <p>{{contacts[activeContact].name}}</p>
+                    <p>Ultimo accesso </p>
+    
+                </div>
+                
+                <p class="msg_sent" >{{contacts[activeContact].messages[0].message}}</p>
+            </div>
             <!-- /colonna chat -->
         </div>
 
