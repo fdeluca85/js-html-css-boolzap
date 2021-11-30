@@ -20,7 +20,7 @@
                 <div class="elenco-contatti">
                     <ul>
                         <li v-for="(contatto, index) in contacts">
-                            <img class="avatar" src="./img/avatar_1.jpg" alt="">
+                            <img class="avatar" :src="'img/avatar' + contatto.avatar + '.jpg'" alt="">
                             <span>{{contatto.name}}</span>
                         </li>
                     </ul>
@@ -30,7 +30,7 @@
             <!-- /colonna contatti -->
 
             <!-- colonna chat -->
-            <div class="container_chat"></div>
+            
             <!-- /colonna chat -->
         </div>
 
