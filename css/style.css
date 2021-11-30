@@ -28,27 +28,62 @@ body {
   width: 70%;
   height: 100%;
   background-color: #eaeaea;
-  border: 1px solid black;
+  border: 1px solid rgb(170, 33, 33);
   padding: 10px;
   margin: 0 auto;
   display: flex;
 }
-
+.avatar {
+  width: 50px;
+  border-radius: 50%;
+}
+/* ===========
+    colonna sx
+   =========== */
 .container_contact {
   width: 35%;
   height: 100%;
-  background-color: lightyellow;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
 }
-
-.container_chat {
-  width: 65%;
-  height: 100%;
-  background-color: #dcd4ce;
-}
-
-.elenco-contatti {
+.box-user {
+  background-color: #fafafa;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  color: #b1b1b1;
+  font-size: 1.2rem;
+}
+.box-user span {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.col-user-user i {
+  margin: 0 7px;
+  color: #b1b1b1;
+  font-size: 1.2rem;
+}
+.box-notifiche {
+  background-color: #8edafc;
+  height: 70px;
+  flex-shrink: 50%;
+}
+.box-ricerca {
+  background-color: #fafafa;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+.box-ricerca input {
+  height: 40px;
+  width: 90%;
+}
+.elenco-contatti {
+  background-color: #fff;
+  overflow-y: scroll;
+  height: 80%;
 }
 .elenco-contatti li {
   display: flex;
@@ -56,7 +91,12 @@ body {
   padding: 10px 10px 10px 20px;
   border-bottom: 1px solid black;
 }
-.avatar {
-  width: 50px;
-  border-radius: 50%;
+
+/* ===========
+    colonna dx
+   =========== */
+.container_chat {
+  width: 65%;
+  height: 100%;
+  background-color: #dcd4ce;
 }
