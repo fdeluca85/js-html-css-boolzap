@@ -53,7 +53,10 @@
                 <!-- elenco contatti -->
                 <div class="elenco-contatti">
                     <ul>
-                        <li v-for="(contatto, index) in contacts">
+                        <li v-for="(contatto, index) in contacts" 
+                        @click="setActiveContact(index)"
+                        :class="activeContact === index ? 'active' : '' "
+                        >
                             <img class="avatar" :src="'img/avatar' + contatto.avatar + '.jpg'" alt="">
                             <span>{{contatto.name}}</span>
                         </li>
@@ -64,7 +67,8 @@
             <!-- /colonna contatti -->
 
             <!-- colonna chat -->
-            
+            <p><img class="avatar" :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'" alt="">{{contacts[activeContact].name}} </p>
+            <p>{{contacts[activeContact].messages[0].message}}</p>
             <!-- /colonna chat -->
         </div>
 

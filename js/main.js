@@ -87,12 +87,19 @@ const app = new Vue({
                 status: 'received'
             }
             ],
+            
         },
-    ]
+        
+    ],
+    activeContact: 0,
     
 
     },
     methods:{
+        setActiveContact: function(index){
+            // console.log(index);
+            this.activeContact = index;
+        }
 
     }
 
