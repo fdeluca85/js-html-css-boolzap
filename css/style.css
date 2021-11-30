@@ -41,6 +41,7 @@ body {
     colonna sx
    =========== */
 .container_contact {
+  position: relative;
   width: 35%;
   height: 100%;
   background-color: white;
@@ -67,8 +68,18 @@ body {
 }
 .box-notifiche {
   background-color: #8edafc;
-  height: 70px;
+  height: 100px;
   flex-shrink: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.box-notifiche i {
+  background-color: #fafafa;
+  color: #8edafc;
+  font-size: 20px;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 50%;
 }
 .box-ricerca {
   background-color: #fafafa;
@@ -79,6 +90,14 @@ body {
 .box-ricerca input {
   height: 40px;
   width: 90%;
+  border: none;
+  border: 1px solid #fafafa;
+}
+.box-ricerca i {
+  color: #b1b1b1;
+  position: absolute;
+  left: 40px;
+  top: 230px;
 }
 .elenco-contatti {
   background-color: #fff;
@@ -89,7 +108,7 @@ body {
   display: flex;
   align-items: flex-start;
   padding: 10px 10px 10px 20px;
-  border-bottom: 1px solid black;
+  border-bottom: 5px solid #fafafa;
 }
 
 /* ===========
