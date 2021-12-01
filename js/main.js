@@ -104,6 +104,7 @@ const app = new Vue({
     ],
     activeContact: 0,
     inputMessage:'',
+    search:'',
     
 
     },
@@ -121,7 +122,11 @@ const app = new Vue({
                         status: 'sent'
                     });
                 this.inputMessage = "";
+                setTimeout(risposta, 1000)
             }
+            function risposta() {
+                alert('Hello');
+              }
 
         },
 
