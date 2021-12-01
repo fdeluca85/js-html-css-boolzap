@@ -84,14 +84,10 @@
                     <div v-for='(messaggio, index) in contacts[activeContact].messages' :class="messaggio.status == 'sent' ? 'msg_sent' : 'msg-recived'" >
                         <p>{{messaggio.message}}</p>
                     </div> 
-
-                    <!-- <div class="msg-recived">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sed doloribus eaque suscipit porro. Illo nobis similique maiores eos aut, quisquam, assumenda veniam doloribus totam optio amet dolorum, quidem laboriosam.</p>
-                    </div> -->
                 </div>
 
                 <div class="invia-msg">
-
+                    <input @keyup.enter="addMsg" type="text" placeholder="Scrivi un messaggio" v-model="inputMessage">
                 </div>
             </div>
         </div>
