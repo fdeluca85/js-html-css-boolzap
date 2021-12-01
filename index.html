@@ -21,7 +21,6 @@
             <!-- colonna contatti -->
             <div class="colonna_sx">
                 <div class="box-user">
-                    <div>
                         <!-- foto e nome utente -->
                         <div class="info-utente">
                             <img class="avatar" src="img/avatar_io.jpg" alt="foto user">
@@ -30,21 +29,22 @@
                         <!-- /foto e nome utente -->
     
                         <!-- icone opzioni utente -->
-                        <div class="user-icon">
+                        <div class="user-icons">
                             <i class="fas fa-circle-notch"></i>
                             <i class="fas fa-comment-alt"></i>
                             <i class="fas fa-ellipsis-v"></i>
                         </div>
                         <!-- /icone opzioni utente -->
-                    </div>
                 </div>
                 <!-- box notifiche -->
                 <div class="box-notifiche">
-                    <div>
-                        <i class="fas fa-bell-slash"></i>
+                    <div class="icon-sound" >
+                        <i class="fas fa-bell-slash"></i>                        
+                    </div>
+                    <div class="not-txt">
                         <p>Ricevi notifiche di nuovi messaggi</p>
-                        <p>Attiva notifiche desktop</p>
-                    </div>                   
+                        <p class="notifiche">Attiva notifiche desktop</p>
+                    </div>
                 </div>
                 <!-- /box notifiche -->
                 
@@ -74,11 +74,24 @@
             <!-- colonna chat -->
             <div class="colonna_dx">
                 <div class="barra-contatto">
-                    <img class="avatar" :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'" :alt="'avatar del contatto: '+contacts[activeContact].name">
-                    <span>{{contacts[activeContact].name}}</span>
-                    <p>Ultimo accesso </p>
-    
-                </div>
+                    <!-- foto e nome utente -->
+                    <div class="info-utente">
+                        <img class="avatar" :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'" :alt="'avatar del contatto: '+contacts[activeContact].name">
+                        <div class="cont-accesso">
+                            <p class="c-nome">{{contacts[activeContact].name}}</p>
+                            <p class="c-accesso" >Ultimo accesso </p>
+                        </div>                    
+                    </div>
+                    <!-- /foto e nome utente -->
+
+                    <!-- icone opzioni utente -->
+                    <div class="user-icons">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <!-- /icone opzioni utente -->
+            </div>
                 
                 <div class="container_chat">
                     <div v-for='(messaggio, index) in contacts[activeContact].messages' :class="messaggio.status == 'sent' ? 'msg_sent' : 'msg-recived'" >

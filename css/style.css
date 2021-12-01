@@ -41,41 +41,65 @@ body {
     colonna sx
    =========== */
 .colonna_sx {
-  position: relative;
   width: 35%;
   height: 100%;
-  background-color: white;
+  background-color: #eaeaea;
   display: flex;
   flex-direction: column;
 }
+/* ===========
+      user
+   =========== */
 .box-user {
-  background-color: #fafafa;
-  color: #b1b1b1;
-  font-size: 1.2rem;
-}
-.box-user span {
-  padding: 10px;
+  background-color: #eaeaea;
+  margin: 10px;
   display: flex;
+  justify-content: space-between;
 }
-.col-user-user i {
-  margin: 0 7px;
+.info-utente {
+  display: flex;
+  align-items: flex-start;
+}
+.info-utente span {
+  padding: 10px;
+}
+
+.user-icons {
+  margin: 10px;
   color: #b1b1b1;
   font-size: 1.2rem;
 }
+/* ===========
+    notifiche
+   =========== */
 .box-notifiche {
   background-color: #8edafc;
-  height: 100px;
-  flex-shrink: 50%;
-  /* display: flex; */
+  height: 70px;
+  display: flex;
 }
-.box-notifiche i {
-  background-color: #fafafa;
+.icon-sound {
+  margin: 10px;
+  padding: 10px 10px;
   color: #8edafc;
-  font-size: 20px;
-  margin: 5px;
-  padding: 10px;
   border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  font-size: 22px;
 }
+.not-txt {
+  padding: 10px;
+  height: 50px;
+  font-size: 14px;
+}
+.notifiche {
+  color: #4f7485;
+  text-decoration: underline;
+  font-size: 13px;
+}
+/* ===========
+    ricerca
+   =========== */
 .box-ricerca {
   background-color: #fafafa;
   height: 50px;
@@ -93,6 +117,9 @@ body {
   padding: 5px;
   background-color: #fafafa;
 }
+/* ===========
+    contatti
+   =========== */
 .elenco-contatti {
   background-color: #fff;
   overflow-y: scroll;
@@ -114,12 +141,20 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
+  border-right: 1px #d6d6d6;
 }
 .barra-contatto {
   background-color: #eaeaea;
+  margin: 10px;
   display: flex;
+  justify-content: space-between;
+}
+.c-nome {
   padding: 10px;
-  height: 70px;
+}
+.c-accesso {
+  font-size: 12px;
+  color: #6b7376;
 }
 .container_chat {
   /* height: 85%; */
