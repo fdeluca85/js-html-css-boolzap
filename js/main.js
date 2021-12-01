@@ -114,7 +114,7 @@ const app = new Vue({
         },
         addMsg:function(){
             if(this.inputMessage != ""){
-                this.contacts[0].messages.push(
+                this.contacts[this.activeContact].messages.push(
                     {   
                         date: new Date().toLocaleString(),
                         message:this.inputMessage, 
