@@ -75,16 +75,19 @@
             <div class="colonna_dx">
                 <div class="barra-contatto">
                     <img class="avatar" :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'" :alt="'avatar del contatto: '+contacts[activeContact].name">
-                    <p>{{contacts[activeContact].name}}</p>
+                    <span>{{contacts[activeContact].name}}</span>
                     <p>Ultimo accesso </p>
     
                 </div>
                 
                 <div class="container_chat">
-                    <p class="msg_sent" >{{contacts[activeContact].messages[0].message}}</p>
-                    <div class="msg-recived">
+                    <div v-for='(messaggio, index) in contacts[activeContact].messages' :class="messaggio.status == 'sent' ? 'msg_sent' : 'msg-recived'" >
+                        <p>{{messaggio.message}}</p>
+                    </div> 
+
+                    <!-- <div class="msg-recived">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sed doloribus eaque suscipit porro. Illo nobis similique maiores eos aut, quisquam, assumenda veniam doloribus totam optio amet dolorum, quidem laboriosam.</p>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="invia-msg">
