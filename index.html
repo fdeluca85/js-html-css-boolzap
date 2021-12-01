@@ -83,6 +83,7 @@
                 <div class="container_chat">
                     <div v-for='(messaggio, index) in contacts[activeContact].messages' :class="messaggio.status == 'sent' ? 'msg_sent' : 'msg-recived'" >
                         <p>{{messaggio.message}}</p>
+                        <span>{{messaggio.date}}</span>
                     </div> 
                 </div>
 
