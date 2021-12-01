@@ -102,7 +102,7 @@
 
                 <div class="invia-msg">
                     <span class="msg_icon"><i class="far fa-smile"></i></span>
-                    <input @keyup.enter="addMsg" type="text" placeholder="Scrivi un messaggio" v-model="inputMessage">
+                    <input @keyup.enter="addMsg(); replyMsg()" type="text" placeholder="Scrivi un messaggio" v-model="inputMessage">
                     <span class="msg_icon"><i class="fas fa-microphone"></i></span>
                 </div>
             </div>

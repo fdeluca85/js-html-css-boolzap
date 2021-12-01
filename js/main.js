@@ -105,6 +105,7 @@ const app = new Vue({
     activeContact: 0,
     inputMessage:'',
     search:'',
+    messageActive: null
     
 
     },
@@ -122,13 +123,21 @@ const app = new Vue({
                         status: 'sent'
                     });
                 this.inputMessage = "";
-                setTimeout(risposta, 1000)
             }
-            function risposta() {
-                alert('Hello');
-              }
 
         },
+        risposta: function() {
+            this.contacts[this.activeContact].messages.push(
+                {   message:'ok :)',
+                    status: 'received',
+                    date: new Date().toLocaleString()
+                });
+        },
+        replyMsg: function () {
+            this.messageActive = setTimeout(() => {
+				this.risposta();
+			}, 1000);
+        }
 
     }
 
