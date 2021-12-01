@@ -120,7 +120,7 @@ const app = new Vue({
                         message:this.inputMessage, 
                         status: 'sent'
                     });
-                this.inputValue = "";
+                this.inputMessage = "";
             }
 
         },
