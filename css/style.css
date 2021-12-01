@@ -11,8 +11,7 @@ ul {
   list-style: none;
 }
 body {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 #root {
   height: 100vh;
@@ -20,7 +19,7 @@ body {
   background-repeat: no-repeat;
   padding: 20px 0;
 }
-.active{
+.active {
   background-color: #b1b1b1;
   color: white;
 }
@@ -90,16 +89,15 @@ body {
   border: none;
   border: 1px solid #fafafa;
 }
-.box-ricerca i {
-  color: #b1b1b1;
-  position: absolute;
-  left: 40px;
-  top: 230px;
+.box-ricerca button {
+  border: none;
+  padding: 5px;
+  background-color: #fafafa;
 }
 .elenco-contatti {
   background-color: #fff;
   overflow-y: scroll;
-  height: 80%;
+  flex-grow: 1;
 }
 .elenco-contatti li {
   display: flex;
@@ -115,20 +113,37 @@ body {
 .colonna_dx {
   width: 65%;
   height: 100%;
-  background-color: #dcd4ce;
 }
-.barra-contatto{
-  background-color:#b1b1b1;
-  display: flex; 
-  padding: 10px;
-}
-.container_chat{
+.barra-contatto {
+  background-color: #b1b1b1;
   display: flex;
+  padding: 10px;
+  height: 70px;
 }
-.msg_sent{
+.container_chat {
+  height: 85%;
+  display: flex;
+
+  background-image: url('../img/mine.jpg');
+}
+.msg_sent {
   background-color: rgb(225, 243, 188);
+  height: fit-content;
   padding: 10px;
   margin: 15px;
   width: fit-content;
   border-radius: 15px;
+  margin-left: auto;
+}
+.msg-recived {
+  background-color: #fff;
+  height: fit-content;
+  padding: 10px;
+  margin: 15px;
+  width: fit-content;
+  border-radius: 15px;
+}
+.invia-msg {
+  background-color: #b1b1b1;
+  height: 70px;
 }
