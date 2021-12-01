@@ -20,8 +20,7 @@ body {
   padding: 20px 0;
 }
 .active {
-  background-color: #b1b1b1;
-  color: white;
+  background-color: #e9ebeb;
 }
 /* ===========
     container
@@ -127,15 +126,17 @@ body {
   display: flex;
   flex-direction: column;
   flex-grow: 2;
-
   background-image: url('../img/mine.jpg');
+  overflow-y: scroll;
 }
 .data {
+  color: #a2a5a7;
   font-size: 9px;
   display: flex;
+  margin-top: 5px;
 }
 .msg_sent {
-  background-color: rgb(225, 243, 188);
+  background-color: #d5f9ba;
   height: fit-content;
   padding: 10px;
   margin: 15px;
@@ -146,6 +147,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  font-weight: 800;
 }
 .msg-recived {
   background-color: #fff;
@@ -158,8 +160,25 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  font-weight: 800;
 }
 .invia-msg {
-  background-color: #b1b1b1;
-  height: 10%;
+  background-color: #f3eeea;
+  height: 70px;
+  display: flex;
+}
+.invia-msg input {
+  border: none;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  height: 50px;
+  flex-grow: 1;
+}
+.msg_icon {
+  padding: 20px;
+  color: #6b7376;
+  display: flex;
+  align-items: center;
+  font-size: 22px;
 }
