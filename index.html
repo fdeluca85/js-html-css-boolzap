@@ -53,8 +53,8 @@
                     <button>
                         <i class="fas fa-search"></i>
                     </button>
-                    
-                    <input type="text" vmodel="search" placeholder="cerca o inizia una nuova chat">
+
+                    <input v-for="(el, index) in contacts" type="text" :class="el.visible == true ? 'visible' : 'unvisible' " v-model="search" placeholder="cerca o inizia una nuova chat">
                 </div>
                 <!-- /box ricerca -->
 
