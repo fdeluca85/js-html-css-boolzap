@@ -1,45 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,900&display=swap" rel="stylesheet">
     <!-- fontAwesom -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- /fontAwesom -->
     <title>Boolzapp</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <div id="root">
         <div class="container">
             <!-- colonna contatti -->
             <div class="colonna_sx">
                 <div class="box-user">
-                        <!-- foto e nome utente -->
-                        <div class="info-utente">
-                            <img class="avatar" src="img/avatar_io.jpg" alt="foto user">
-                            <span>Nome Utente</span>
-                        </div>
-                        <!-- /foto e nome utente -->
-    
-                        <!-- icone opzioni utente -->
-                        <div class="user-icons">
-                            <i class="fas fa-circle-notch"></i>
-                            <i class="fas fa-comment-alt"></i>
-                            <i class="fas fa-ellipsis-v"></i>
-                        </div>
-                        <!-- /icone opzioni utente -->
+                    <!-- foto e nome utente -->
+                    <div class="info-utente">
+                        <img class="avatar" src="img/avatar_io.jpg" alt="foto user">
+                        <span>Nome Utente</span>
+                    </div>
+                    <!-- /foto e nome utente -->
+
+                    <!-- icone opzioni utente -->
+                    <div class="user-icons">
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <!-- /icone opzioni utente -->
                 </div>
                 <!-- box notifiche -->
                 <div class="box-notifiche">
-                    <div class="icon-sound" >
-                        <i class="fas fa-bell-slash"></i>                        
+                    <div class="icon-sound">
+                        <i class="fas fa-bell-slash"></i>
                     </div>
                     <div class="not-txt">
                         <p>Ricevi notifiche di nuovi messaggi</p>
@@ -47,25 +51,25 @@
                     </div>
                 </div>
                 <!-- /box notifiche -->
-                
+
                 <!-- box ricerca -->
                 <div class="box-ricerca">
                     <button>
                         <i class="fas fa-search"></i>
                     </button>
 
-                    <input v-for="(el, index) in contacts" type="text" :class="el.visible == true ? 'visible' : 'unvisible' " v-model="search" placeholder="cerca o inizia una nuova chat">
+                    <input type="text" v-model="search" @keyup="searching()"
+                        placeholder="cerca o inizia una nuova chat">
                 </div>
                 <!-- /box ricerca -->
 
                 <!-- elenco contatti -->
                 <div class="elenco-contatti">
                     <ul>
-                        <li v-for="(contatto, index) in contacts" 
-                        @click="setActiveContact(index)"
-                        :class="activeContact === index ? 'active' : '' "
-                        >
-                            <img class="avatar" :src="'img/avatar' + contatto.avatar + '.jpg'" :alt="'avatar del contatto: '+ contatto.name">
+                        <li v-for="(contatto, index) in contacts" @click="setActiveContact(index)"
+                            :class="activeContact === index ? 'active' : '' " v-if="contatto.visible">
+                            <img class="avatar" :src="'img/avatar' + contatto.avatar + '.jpg'"
+                                :alt="'avatar del contatto: '+ contatto.name">
 
                             <span>{{contatto.name}}</span>
                         </li>
@@ -80,11 +84,12 @@
                 <div class="barra-contatto">
                     <!-- foto e nome utente -->
                     <div class="info-utente">
-                        <img class="avatar" :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'" :alt="'avatar del contatto: '+contacts[activeContact].name">
+                        <img class="avatar" :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'"
+                            :alt="'avatar del contatto: '+contacts[activeContact].name">
                         <div class="cont-accesso">
                             <p class="c-nome">{{contacts[activeContact].name}}</p>
-                            <p class="c-accesso" >Ultimo accesso </p>
-                        </div>                    
+                            <p class="c-accesso">Ultimo accesso </p>
+                        </div>
                     </div>
                     <!-- /foto e nome utente -->
 
@@ -95,17 +100,18 @@
                         <i class="fas fa-ellipsis-v"></i>
                     </div>
                     <!-- /icone opzioni utente -->
-            </div>
-                
+                </div>
+
                 <div class="container_chat">
 
-                    <div v-for='(messaggio, index) in contacts[activeContact].messages' :class="messaggio.status == 'sent' ? 'msg_sent' : 'msg-recived'" >
+                    <div v-for='(messaggio, index) in contacts[activeContact].messages'
+                        :class="messaggio.status == 'sent' ? 'msg_sent' : 'msg-recived'">
 
                         <p>{{messaggio.message}}</p>
 
                         <span class="data">{{messaggio.date}}</span>
 
-                    </div> 
+                    </div>
                 </div>
 
                 <div class="invia-msg">
@@ -114,7 +120,8 @@
                         <i class="far fa-smile"></i>
                     </span>
 
-                    <input @keyup.enter="addMsg(); replyMsg()" type="text" placeholder="Scrivi un messaggio" v-model="inputMessage">
+                    <input @keyup.enter="addMsg(); replyMsg()" type="text" placeholder="Scrivi un messaggio"
+                        v-model="inputMessage">
 
                     <span class="msg_icon">
                         <i class="fas fa-microphone"></i>
@@ -125,7 +132,7 @@
 
 
 
-    </div><!-- fine div root -->    
+    </div><!-- fine div root -->
 
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
@@ -135,4 +142,5 @@
     <!-- contatti link -->
     <script src="./js/contacts.js"></script>
 </body>
+
 </html>
