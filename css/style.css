@@ -37,6 +37,17 @@ body {
   width: 50px;
   border-radius: 50%;
 }
+.fas,
+.far {
+  cursor: pointer;
+  margin: 3px;
+}
+.fas:hover {
+  color: #6b7376;
+}
+.far:hover {
+  color: #6b7376;
+}
 /* ===========
     colonna sx
    =========== */

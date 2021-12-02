@@ -50,8 +50,11 @@
                 
                 <!-- box ricerca -->
                 <div class="box-ricerca">
-                    <button><i class="fas fa-search"></i></button>
-                    <input type="text" vmodel="search" placeholder="cerca o inizia una nuova ricerca">
+                    <button>
+                        <i class="fas fa-search"></i>
+                    </button>
+                    
+                    <input type="text" vmodel="search" placeholder="cerca o inizia una nuova chat">
                 </div>
                 <!-- /box ricerca -->
 
@@ -63,6 +66,7 @@
                         :class="activeContact === index ? 'active' : '' "
                         >
                             <img class="avatar" :src="'img/avatar' + contatto.avatar + '.jpg'" :alt="'avatar del contatto: '+ contatto.name">
+
                             <span>{{contatto.name}}</span>
                         </li>
                     </ul>
@@ -94,16 +98,27 @@
             </div>
                 
                 <div class="container_chat">
+
                     <div v-for='(messaggio, index) in contacts[activeContact].messages' :class="messaggio.status == 'sent' ? 'msg_sent' : 'msg-recived'" >
+
                         <p>{{messaggio.message}}</p>
+
                         <span class="data">{{messaggio.date}}</span>
+
                     </div> 
                 </div>
 
                 <div class="invia-msg">
-                    <span class="msg_icon"><i class="far fa-smile"></i></span>
+
+                    <span class="msg_icon">
+                        <i class="far fa-smile"></i>
+                    </span>
+
                     <input @keyup.enter="addMsg(); replyMsg()" type="text" placeholder="Scrivi un messaggio" v-model="inputMessage">
-                    <span class="msg_icon"><i class="fas fa-microphone"></i></span>
+
+                    <span class="msg_icon">
+                        <i class="fas fa-microphone"></i>
+                    </span>
                 </div>
             </div>
         </div>

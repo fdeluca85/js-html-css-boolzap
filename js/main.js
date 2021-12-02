@@ -105,7 +105,7 @@ const app = new Vue({
     activeContact: 0,
     inputMessage:'',
     search:'',
-    messageActive: null
+    messageActive: 0
     
 
     },
@@ -126,18 +126,19 @@ const app = new Vue({
             }
 
         },
-        risposta: function() {
-            this.contacts[this.activeContact].messages.push(
-                {   message:'ok :)',
-                    status: 'received',
-                    date: new Date().toLocaleString()
-                });
-        },
+        
         replyMsg: function () {
             this.messageActive = setTimeout(() => {
 				this.risposta();
 			}, 1000);
-        }
+        },
+        risposta: function() {
+            this.contacts[this.activeContact].messages.push(
+                {   message:'ok! :)',
+                    status: 'received',
+                    date: new Date().toLocaleString()
+                });
+        },
 
     }
 
